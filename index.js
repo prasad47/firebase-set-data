@@ -12,6 +12,7 @@ app.get('/', function(request, response) {
 
     var  dataCallback = function(err,data) {
                    console.log('*********** Callback Entered *******************'+JSON.stringify(data));
+        response.send('Sent Successfully!')
     };
     phaxio.sendFax({
         to: '8778532070',
@@ -21,7 +22,7 @@ app.get('/', function(request, response) {
         batch_delay:60,
         callback_url:'https://rocky-scrubland-69687.herokuapp.com/faxStatus'
     }, dataCallback);
-  response.send('Sent Successfully!')
+
 })
 
 app.post('/faxStatus', function(request, response) {
@@ -30,16 +31,17 @@ app.post('/faxStatus', function(request, response) {
 
   var form = new multiparty.Form();
 
-  form.parse(request, function(err, fields, files) {
+  form.parse(request,response, function(err, fields, files) {
     console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
     console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.direction);
     var fax = JSON.parse(fields.fax);
     console.log('Fax id::::::::' + fax.id);
+      response.writeHead(200, {'content-type': 'text/plain'});
+      response.end('Received callback');
   });
-    //response.end('Recieved Successfully');
-  })
+ });
 
 
 app.listen(app.get('port'), function() {
