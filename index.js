@@ -30,14 +30,14 @@ app.post('/faxStatus', function(request, response) {
 
   var form = new multiparty.Form();
 
-  form.parse(request, function(err, fields, files,response) {
+  form.parse(request, function(err, fields, files) {
     console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
     console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.direction);
     var fax = JSON.parse(fields.fax);
     console.log('Fax id::::::::' + fax.id);
-      response.writeHead(200, {'content-type': 'text/plain'});
+      response.sendStatus(200);
       response.end('Received callback');
   });
 
