@@ -12,8 +12,7 @@ app.get('/', function(request, response) {
 
     var  dataCallback = function(err,data) {
                    console.log('*********** Callback Entered *******************'+JSON.stringify(data));
-        response.send('Sent Successfully!')
-    };
+     };
     phaxio.sendFax({
         to: '8778532070',
         string_data: 'Faxing from Node.js',
@@ -22,8 +21,8 @@ app.get('/', function(request, response) {
         batch_delay:60,
         callback_url:'https://rocky-scrubland-69687.herokuapp.com/faxStatus'
     }, dataCallback);
-
-})
+    response.send('Sent Successfully!')
+});
 
 app.post('/faxStatus', function(request, response) {
 
