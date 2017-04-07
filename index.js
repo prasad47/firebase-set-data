@@ -38,11 +38,7 @@ app.post('/faxStatus', function(request, response) {
     var fax = JSON.parse(fields.fax);
     console.log('Fax id::::::::' + fax.id);
   });
-  form.on('error', function(err) {
-    console.log('Error parsing form: ' + err.stack);
-  });
-
- })
+  })
 
 
 app.listen(app.get('port'), function() {
