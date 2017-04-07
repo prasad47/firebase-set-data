@@ -27,9 +27,6 @@ app.get('/', function(request, response) {
 app.post('/faxStatus', function(request, response) {
 
   console.log('!!!Inside updateFaxStatus method !!!!');
-  console.log('!!! request.body !!!!'+JSON.stringify(request.body));
-  console.log('!!! request.body !!!!'+JSON.stringify(request.body.key));
-  console.log('!!!Inside updateFaxStatus method !!!!');
 
   var form = new multiparty.Form();
 
