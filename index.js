@@ -38,6 +38,7 @@ app.post('/faxStatus', function(request, response) {
     var fax = JSON.parse(fields.fax);
     console.log('Fax id::::::::' + fax.id);
   });
+    response.end('Recieved Successfully');
   })
 
 
