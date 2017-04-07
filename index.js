@@ -31,7 +31,7 @@ app.post('/faxStatus', function(request, response) {
   var form = new multiparty.Form();
 
   form.parse(request, function(err, fields, files) {
-    console.log('~~~!!!!!!!!!!!!!!!!!!' + fields);
+    console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
     console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
     console.log('!!!!!!!!!!!!!!!!!!' + fields.direction);
