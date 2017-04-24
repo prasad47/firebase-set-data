@@ -56,10 +56,17 @@ app.post('/faxStatus', function(request, response) {
   form.parse(request, function(err, fields, files) {
 
     console.log('Fax id::::::::' + fields.fax.id);
-      var data =fields.fax.id;
-      var ordersRef = ref.child("faxes/"+fields.fax.id);
-      console.log('*********** Callback Entered *******************' + JSON.stringify(data));
-      var fireBaseReference=ordersRef.update(data);
+
+      console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
+      console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
+      console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
+      console.log('!!!!!!!!!!!!!!!!!!' + fields.direction);
+      var fax = JSON.parse(fields.fax);
+      console.log('Fax id::::::::' + fax.id);
+
+      var ordersRef = ref.child("faxes/"+fax.id);
+
+      var fireBaseReference=ordersRef.update(fields.fax);
       console.log('fireBaseReference'+JSON.stringify(fireBaseReference))
       response.sendStatus(200);
       response.end('Received callback');
