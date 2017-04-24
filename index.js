@@ -55,8 +55,6 @@ app.post('/faxStatus', function(request, response) {
 
   form.parse(request, function(err, fields, files) {
 
-    console.log('Fax id::::::::' + fields.fax.id);
-
       console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
       console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
       console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
@@ -64,7 +62,7 @@ app.post('/faxStatus', function(request, response) {
       var fax = JSON.parse(fields.fax);
       console.log('Fax id::::::::' + fax.id);
 
-      var ordersRef = ref.child("faxes/"+fax.id);
+      var ordersRef = ref.child("faxes/"+fax.id+"/data");
 
       var fireBaseReference=ordersRef.set(fields.fax);
       console.log('fireBaseReference'+JSON.stringify(fireBaseReference))
