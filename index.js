@@ -62,7 +62,7 @@ app.post('/faxStatus', function(request, response) {
       var fax = JSON.parse(fields.fax);
       console.log('Fax id::::::::' + fax.id);
 
-      var ordersRef = ref.child("faxes/"+fax.id+"/data");
+      var ordersRef = ref.child("faxes/"+fax.id);
 
       var fireBaseReference=ordersRef.set(fields.fax);
       console.log('fireBaseReference'+JSON.stringify(fireBaseReference))
