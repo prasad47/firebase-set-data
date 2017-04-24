@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\hp\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.8
+3 info using node@v4.4.3
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle node-js-sample@0.2.0~prestart: node-js-sample@0.2.0
+6 silly lifecycle node-js-sample@0.2.0~prestart: no script for prestart, continuing
+7 info lifecycle node-js-sample@0.2.0~start: node-js-sample@0.2.0
+8 verbose lifecycle node-js-sample@0.2.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle node-js-sample@0.2.0~start: PATH: C:\Users\hp\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Angular workspace\firebase-setdata\firebase-set-data\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\hp\AppData\Local\GitHub\PortableGit_25d850739bc178b2eb13c3e2a9faafea2f9143c0\cmd\;C:\Program Files\MongoDB\Server\3.2\bin;C:\Python27\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\git\cmd;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Users\hp\AppData\Roaming\npm
+10 verbose lifecycle node-js-sample@0.2.0~start: CWD: C:\Angular workspace\firebase-setdata\firebase-set-data
+11 silly lifecycle node-js-sample@0.2.0~start: Args: [ '/d /s /c', 'node index.js' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:870:11)
+12 verbose stack     at process.kill (node.js:777:15)
+12 verbose stack     at process.listener (C:\Users\hp\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:72:20)
+12 verbose stack     at process.emit (events.js:166:7)
+12 verbose stack     at processEmit (C:\Users\hp\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (C:\Users\hp\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (node.js:804:46)
+13 verbose cwd C:\Angular workspace\firebase-setdata\firebase-set-data
+14 error Windows_NT 6.3.9600
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\hp\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 error node v4.4.3
+17 error npm  v3.10.8
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
