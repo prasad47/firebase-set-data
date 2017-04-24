@@ -48,31 +48,26 @@ app.get('/', function(request, response) {
 })
 
 app.post('/faxStatus', function(request, response) {
-    console.log('!!!Inside updateFaxStatus method !!!!');
 
-    var form = new multiparty.Form();
+  console.log('!!!Inside updateFaxStatus method !!!!');
 
-    form.parse(request, function(err, fields, files,response) {
-        console.log('~~~!!!!!!!!!!!!!!!!!!' + JSON.stringify(fields));
-        console.log('!!!!!!!!!!!!!!!!!!' + fields.success);
-        console.log('!!!!!!!!!!!!!!!!!!' + fields.is_test);
-        console.log('!!!!!!!!!!!!!!!!!!' + fields.direction);
-        var fax = JSON.parse(fields.fax);
-        console.log('Fax id::::::::' + fax.id);
+  var form = new multiparty.Form();
 
+  form.parse(request, function(err, fields, files) {
 
-        var ordersRef = ref.child("faxes/"+fax.id);
-         var fireBaseReference=ordersRef.update(fax);
-        console.log('fireBaseReference --- after saving the result '+JSON.stringify(fireBaseReference))
+    console.log('Fax id::::::::' + fields.fax.id);
+      var data =fields.fax.id;
+      var ordersRef = ref.child("faxes/"+fields.fax.id);
+      console.log('*********** Callback Entered *******************' + JSON.stringify(data));
+      var fireBaseReference=ordersRef.update(data);
+      console.log('fireBaseReference'+JSON.stringify(fireBaseReference))
+      response.sendStatus(200);
+      response.end('Received callback');
+  });
 
-        response.writeHead(200, {'content-type': 'text/plain'});
-        response.end('Received callback');
-    });
-
-})
+  })
 
 
 app.listen(app.get('port'), function() {
-    console.log("Node app is running at localhost:" + app.get('port'))
-
+  console.log("Node app is running at localhost:" + app.get('port'))
 })
