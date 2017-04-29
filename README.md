@@ -13,7 +13,7 @@ npm start
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
- Note :-  By Starting the server on dev.Local You see the server consoles with Phaxio Test Fax Sent .
+Note :-  By Starting the server on dev.Local You see the server consoles with Phaxio Test Fax Sent .
 
 
  
